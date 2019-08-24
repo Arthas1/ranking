@@ -5,15 +5,11 @@ package com.citadelglobal.ranking.repo;
 
 
 
-import com.citadelglobal.ranking.entity.citadelranking;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import com.citadelglobal.ranking.entity.CitadelRanking;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
 
-
-public interface UserRepository extends CrudRepository<citadelranking, Integer> {
+public interface UserRepository extends CrudRepository<CitadelRanking, Integer> {
     //   public interface UserRepository extends JpaRepository<citadelranking, Integer> {
 
 }

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class citadelranking {
+public class CitadelRanking {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -25,7 +25,7 @@ public class citadelranking {
     private int kills;
     private int deaths;
 
-    public citadelranking(int acces, String user, String pass, int score, int extrastype, int funds, LocalDate joindate,
+    public CitadelRanking(int acces, String user, String pass, int score, int extrastype, int funds, LocalDate joindate,
                           LocalDate lastdate, LocalDate lastfunds, int kills, int deaths) {
         this.acces=acces;
         this.user = user;
@@ -40,7 +40,7 @@ public class citadelranking {
         this.deaths = deaths;
     }
 
-    public citadelranking(){}
+    public CitadelRanking(){}
 
 
     public int getAcces() {

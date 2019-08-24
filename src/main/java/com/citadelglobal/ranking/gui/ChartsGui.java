@@ -1,17 +1,17 @@
 package com.citadelglobal.ranking.gui;
 
-import com.citadelglobal.ranking.entity.citadelranking;
+import com.citadelglobal.ranking.entity.CitadelRanking;
 import com.citadelglobal.ranking.repo.UserRepository;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
-import javafx.concurrent.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.time.LocalDate;
 
 @Controller
 @Route("globalranking")
@@ -34,14 +34,21 @@ public class ChartsGui extends VerticalLayout {
         Label labelDeathsResult = new Label("Deaths");
         Label labelLastActive = new Label("Recently");
 
-        HorizontalLayout hl1 = new HorizontalLayout();
-        hl1.add(labelTop, labelStatus, labelName, labelScore, labelKillsResult, labelDeathsResult, labelLastActive);
 
 
+        TextField textFieldUser = new TextField("Podaj uzytkownika");
 
+        Button button = new Button("Click");
+        button.addClickListener(clickEvent -> {
+        CitadelRanking citadelRanking = new CitadelRanking(1, textFieldUser.getValue(),"123",0, 0, 0, LocalDate.now(),LocalDate.now(), LocalDate.now(), 0, 0);
+            userRepository.save(citadelRanking);
+
+        });
         StringBuilder response = new StringBuilder();
 
-
+            HorizontalLayout hl1 = new HorizontalLayout();
+        hl1.add(textFieldUser, button);
+          //  hl1.add(labelTop, labelStatus, labelName, labelScore, labelKillsResult, labelDeathsResult, labelLastActive);
         add(hl1);
     }
 }
