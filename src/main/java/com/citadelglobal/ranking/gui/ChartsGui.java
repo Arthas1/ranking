@@ -40,7 +40,7 @@ public class ChartsGui extends VerticalLayout {
 
         Button button = new Button("Click");
         button.addClickListener(clickEvent -> {
-        CitadelRanking citadelRanking = new CitadelRanking(1, textFieldUser.getValue(),"123",0, 0, 0, LocalDate.now(),LocalDate.now(), LocalDate.now(), 0, 0);
+        CitadelRanking citadelRanking = new CitadelRanking(textFieldUser.getValue(),"123",0, 0, 0, LocalDate.now(),LocalDate.now(), LocalDate.now(), 0, 0);
             userRepository.save(citadelRanking);
 
         });

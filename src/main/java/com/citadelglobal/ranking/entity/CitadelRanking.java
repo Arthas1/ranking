@@ -11,9 +11,7 @@ public class CitadelRanking {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-
-
-    private int acces;
+    private Long acces;
     private String user;
     private String pass;
     private int score;
@@ -25,9 +23,8 @@ public class CitadelRanking {
     private int kills;
     private int deaths;
 
-    public CitadelRanking(int acces, String user, String pass, int score, int extrastype, int funds, LocalDate joindate,
+    public CitadelRanking(String user, String pass, int score, int extrastype, int funds, LocalDate joindate,
                           LocalDate lastdate, LocalDate lastfunds, int kills, int deaths) {
-        this.acces=acces;
         this.user = user;
         this.pass = pass;
         this.score = score;
@@ -43,11 +40,11 @@ public class CitadelRanking {
     public CitadelRanking(){}
 
 
-    public int getAcces() {
+    public Long getAcces() {
         return acces;
     }
 
-    public void setAcces(int acces) {
+    public void setAcces(Long acces) {
         this.acces = acces;
     }
 

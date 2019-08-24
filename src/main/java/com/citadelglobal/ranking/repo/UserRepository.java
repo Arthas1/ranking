@@ -9,7 +9,7 @@ import com.citadelglobal.ranking.entity.CitadelRanking;
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface UserRepository extends CrudRepository<CitadelRanking, Integer> {
+public interface UserRepository extends CrudRepository<CitadelRanking, Long> {
     //   public interface UserRepository extends JpaRepository<citadelranking, Integer> {
 
 }
