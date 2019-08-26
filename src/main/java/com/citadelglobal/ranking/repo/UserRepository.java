@@ -6,13 +6,35 @@ package com.citadelglobal.ranking.repo;
 
 
 import com.citadelglobal.ranking.entity.CitadelRanking;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
 
 
 public interface UserRepository extends CrudRepository<CitadelRanking, Long> {
-    //   public interface UserRepository extends JpaRepository<citadelranking, Integer> {
+
+    @Query(value = "SELECT * FROM citadel_ranking WHERE user = :player", nativeQuery = true)
+    List<CitadelRanking> findByName(@Param("player") String player);
+
+
+
+    @Query(value = "SELECT * FROM citadel_ranking WHERE user = :player", nativeQuery = true)
+    List<CitadelRanking> findByScore(@Param("player") String player);
+
+
+
+// @Query(nativeQuery = true, value = "SELECT * FROM RECTANGLE rect WHERE (2*rect.height + 2*rect.width) >= :size")
+//
+//    List<Rectangle> getBigRectangles(@Param("size") int size);
+//
+//
+//
+//    @Query(nativeQuery = true, value = "SELECT * FROM RECTANGLE rect WHERE (2*rect.height + 2*rect.width) < :size")
+//
+//    List<Rectangle> getSmallRectangles(@Param("size") int size);
+
+
 
 }
-
-
-
