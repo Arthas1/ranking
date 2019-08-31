@@ -3,6 +3,7 @@ package com.citadelglobal.ranking.gui;
 import com.citadelglobal.ranking.entity.CitadelRanking;
 import com.citadelglobal.ranking.repo.UserRepository;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -12,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.time.LocalDate;
-
+@StyleSheet("/styles.css")
 @Controller
 @Route("globalranking")
 
