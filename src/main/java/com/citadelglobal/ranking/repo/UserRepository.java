@@ -19,9 +19,12 @@ public interface UserRepository extends CrudRepository<CitadelRanking, Long> {
     List<CitadelRanking> findByName(@Param("player") String player);
 
 
+    @Query(value = "SELECT * FROM citadel_ranking WHERE user = :player AND pass =:pass", nativeQuery = true)
+    List<CitadelRanking> loginUser(@Param("player") String player ,String pass);
 
-    @Query(value = "SELECT * FROM citadel_ranking WHERE user = :player", nativeQuery = true)
-    List<CitadelRanking> findByScore(@Param("player") String player);
+
+    @Query(value = "SELECT * FROM citadel_ranking ORDER BY score DESC", nativeQuery = true)
+    List<CitadelRanking> findByScore();
 
 
 
