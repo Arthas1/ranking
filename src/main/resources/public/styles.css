@@ -1,4 +1,5 @@
 body {
     background-image: url("background_citadel.png");
     background-size: 100%;
+addComponent(new Label("<hr />",ContentMode.HTML));
 }
